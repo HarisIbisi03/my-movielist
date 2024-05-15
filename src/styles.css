@@ -1,0 +1,27 @@
+body {
+    margin: 0 30% 0 30%;
+}
+
+.SortButtonsContainer {
+    display: flex; 
+    justify-content: space-evenly; 
+    margin: 50px 0 50px 0;
+}
+
+li {
+    list-style: none;
+    background-color: #eee;
+    margin: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px #999;
+}
+
+li > img {
+    float: right;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.delete-movie-icon {
+    cursor: pointer;
+}
