@@ -13,15 +13,20 @@ const App = () => {
   const [sortCriteria, setSortCriteria] = useState(null);
 
   const addMovie = (title, rating) => {
-    const newMovieList = [...movieList, { title, rating }];
-    setMovieList(newMovieList);
+    const newMovie = { title, rating };
+    setMovieList([newMovie, ...movieList]);
   };
 
   const deleteMovie = (index) => {
-    const newMovieList = [...movieList];
-    newMovieList.splice(index, 1);
-    setMovieList(newMovieList);
+    const movieToDelete = sortedMovies[index]; 
+    const originalIndex = movieList.findIndex(movie => movie === movieToDelete); 
+    if (originalIndex !== -1) { 
+      const newMovieList = [...movieList];
+      newMovieList.splice(originalIndex, 1);
+      setMovieList(newMovieList);
+    }
   };
+  
 
   const handleSort = (criteria) => {
     setSortCriteria(criteria);
